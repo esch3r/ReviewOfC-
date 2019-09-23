@@ -3,11 +3,20 @@
 using namespace std; 
 
 
+double Payrate () {
+  double rate;
+  cout << "Please enter hourly wage rate: "; 
+  cin >> rate; 
+  return rate;
+}
+
 int main()
 { 
   char choice ='Y';
-  {
-      
+  double prate;
+  prate = Payrate();
+  
+  do {    
   const double RegularHours=40.0 ;// declare a constant double assign it 40
   int dependent,hours; 
   double sstax,ftax,stax,insdep; 
@@ -22,10 +31,10 @@ int main()
   /* if the number of hours exceeds 40 than calculate the grosspay 
   adding 1.5 times the rate times hours m  */ 
    if (hours > RegularHours)  {
-     grosspay =16.78*RegularHours + (1.5)*(16.78)*(hours-RegularHours);
+     grosspay =prate*RegularHours + (1.5)*(prate)*(hours-RegularHours);
    }
    else  {
-     grosspay =16.78*hours; 
+     grosspay =prate*hours; 
    }
    
    
